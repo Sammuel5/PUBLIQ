@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <meta name="application-name" content="PUBLIQ Super Club">
+  <title>Accept invitation · PUBLIQ Super Club</title>
+  <link rel="icon" href="/assets/publiq-super-club-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/invite.js" defer></script>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <section class="login-visual" aria-label="PUBLIQ Super Club restaurant platform">
+      <a class="brand brand-light" href="/" aria-label="PUBLIQ Super Club home"><span class="brand-mark" aria-hidden="true"><img class="brand-mark-image" src="/assets/publiq-super-club-icon.svg" alt=""></span><span>PUBLIQ Super Club</span></a>
+      <div class="login-story"><p class="eyebrow eyebrow-light">YOUR WORKSPACE AWAITS</p><h1>Good menus<br>are a team<br>effort.</h1><p>Accept your secure invitation and get started with the restaurant team.</p></div>
+      <div class="visual-bottom"><span class="live-indicator"></span>One-time, time-limited access</div>
+    </section>
+    <section class="login-panel"><div class="login-form-wrap">
+      <div class="login-mobile-brand brand"><span class="brand-mark" aria-hidden="true"><img class="brand-mark-image" src="/assets/publiq-super-club-icon.svg" alt=""></span><span>PUBLIQ Super Club</span></div>
+      <p class="eyebrow">SECURE INVITATION</p><h2 id="inviteHeading">Accept your invitation</h2><p class="muted login-intro" id="inviteIntro">Create your account credentials to join the restaurant workspace.</p>
+      <form id="newAccountForm" class="form-stack" novalidate>
+        <label for="inviteName">Your name</label><input id="inviteName" name="name" autocomplete="name" maxlength="160" required placeholder="Full name">
+        <label for="invitePassword">Create a password</label><input id="invitePassword" name="password" type="password" autocomplete="new-password" required minlength="14" maxlength="128" placeholder="Use a strong password">
+        <span class="field-help">Use at least 14 characters with uppercase, lowercase, a number, and a symbol.</span>
+        <div id="inviteError" class="form-error" role="alert" aria-live="polite"></div>
+        <button class="button button-primary button-wide" type="submit" id="acceptButton">Accept invitation <span aria-hidden="true">→</span></button>
+      </form>
+      <div id="existingAccount" hidden>
+        <div class="notice notice-warning invite-existing-notice">If you already have an account, sign in with that invited email. Your password will not be changed.</div>
+        <form id="existingAccountForm" class="form-stack" novalidate><label for="existingEmail">Email address</label><input id="existingEmail" type="email" autocomplete="username" inputmode="email" required><label for="existingPassword">Password</label><input id="existingPassword" type="password" autocomplete="current-password" required><div id="existingError" class="form-error" role="alert"></div><button class="button button-primary button-wide" type="submit">Sign in and accept</button></form>
+      </div>
+      <p class="login-footnote">Invitation links are single-use. If this link has expired, ask the inviter to send a new one.</p>
+    </div><footer class="login-footer"><span>© 2026 PUBLIQ Super Club</span><span>Secure workspace</span></footer></section>
+  </main>
+</body>
+</html>
