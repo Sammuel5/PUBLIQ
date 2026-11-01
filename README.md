@@ -1,36 +1,50 @@
-# PUBLIQ Super Club — Static Witching Hour Menu
+<p align="center">
+  <img src="assets/publiq-superclub-logo.jpg" alt="PUBLIQ Super Club" width="280">
+</p>
 
-A single-page, mobile-friendly menu inspired by the supplied gothic purple-and-gold references. It is ready to publish as a static GitHub Pages site.
+<h1 align="center">PUBLIQ Super Club</h1>
+<p align="center">
+  <strong>WITCHING HOUR</strong><br>
+  <sub>FOOD · CAFÉ · BAR MENU</sub>
+</p>
 
-## Included
+<p align="center">
+  <img src="assets/witching-hour-hero.jpg" alt="The moonlit, candlelit PUBLIQ Super Club Witching Hour atmosphere" width="100%">
+</p>
 
-- `index.html` — the complete page, styles, menu data, category navigation, and search.
-- `assets/` — the supplied PUBLIQ logo and icon plus local illustrative photographs for the bar, food, and café sections.
-- `GITHUB-PAGES-TUTORIAL.md` — beginner instructions for publishing and editing the site on GitHub Pages.
-- `.nojekyll` — tells GitHub Pages to serve the static files directly without a Jekyll build.
+<p align="center"><em>A little moonlight. A favorite pour. A table worth lingering over.</em></p>
 
-## Static only
+---
 
-There is no admin login, server, API, database, environment variable, build step, or Vercel Function. The menu is public to anyone with the site link. No secrets are needed.
+## The Menu
 
-## Menu data
+A collection for nights that move from the first round to one more cup. Explore the bar, share a meal, or settle in with something from the café—all in one easy-to-browse menu.
 
-The page combines the latest bar list with the previously supplied Food & Café menu: **15 sections and 118 items**. Names and prices are taken from the supplied lists, not transcribed from the poster references. Food bundles are omitted because their contents and prices were not supplied.
+### Bar Menu
 
-The page shows the requested notice: **all prices include 12% VAT; no additional service charge applies to food or bar orders.** The three supplied asterisks on canned juice prices are preserved without an invented footnote.
+Bottled Spirits · Cocktails · Wines by the Bottle · Beers · Beer Buckets · Shots · Cocktail Towers · Mocktails · Beverages &amp; Mixers
 
-## Illustrative photographs
+### Food &amp; Café Menu
 
-The photographs are illustrative, generated to match the visual mood, and do not depict specific listed brands or dishes. Replace them with PUBLIQ's real photography whenever available; the tutorial lists the asset filenames.
+Food Menu · Frappes · Iced Caffeinated Drinks · Hot Caffeinated Drinks · Iced Non-Coffee Drinks · Hot Non-Coffee Drinks
 
-## Test locally
+> **All prices include 12% VAT. No additional service charge applies to food or bar orders.**
 
-Open `index.html` in a browser, or run a local web server from this folder:
+---
 
-```bash
-python3 -m http.server 8000
-```
+## A Taste of the Atmosphere
 
-Then visit <http://localhost:8000>.
+<p align="center">
+  <img src="assets/witching-hour-food.jpg" alt="Illustrative supper-club food spread" width="32%">
+  <img src="assets/cocktail-hero.jpg" alt="Illustrative cocktail selection" width="32%">
+  <img src="assets/witching-hour-cafe.jpg" alt="Illustrative café drinks" width="32%">
+</p>
 
-See [`GITHUB-PAGES-TUTORIAL.md`](GITHUB-PAGES-TUTORIAL.md) for publishing and editing instructions.
+*Photography is illustrative and does not depict specific menu products or brands.*
+
+---
+
+<p align="center">
+  <strong>15 sections · 118 menu items · Philippine peso pricing</strong><br>
+  <sub>A single-page menu for PUBLIQ Super Club, designed for easy browsing on mobile and desktop.</sub>
+</p>
