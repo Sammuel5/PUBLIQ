@@ -1,6 +1,6 @@
 # Publish the PUBLIQ Super Club menu on GitHub Pages
 
-This folder is a **static website**: `index.html` and local image files. It needs no admin login, database, API, server, Vercel Function, environment variables, or build command.
+This folder is a **static website**: `index.html`, a separate `assets/styles.css` stylesheet, a separate `assets/menu.js` script, and local image files. It needs no admin login, database, API, server, Vercel Function, environment variables, or build command.
 
 The page combines the latest bar menu with the earlier Food & Café list. It has **15 sections and 118 items**. Menu names and prices come from your supplied lists—not from text in the reference posters. The “Witching Hour Food Bundles” shown in the reference were omitted because their exact bundle contents and prices were not supplied. The page includes the notice you selected: all prices include 12% VAT, and no additional service charge applies to food or bar orders. The three juice-price asterisks are preserved; no footnote was provided.
 
@@ -32,7 +32,7 @@ Use a new, clean repository for this static version. Do not upload the old serve
 ## 3. Upload the page and pictures
 
 1. In the new repository, select **Add file** → **Upload files**.
-2. Upload `index.html`, `.nojekyll`, `README.md`, `GITHUB-PAGES-TUTORIAL.md`, and the complete `assets` folder with all eight files inside it.
+2. Upload `index.html`, `.nojekyll`, `README.md`, `GITHUB-PAGES-TUTORIAL.md`, and the complete `assets` folder with all ten files inside it (the images, logo, icon, `styles.css`, and `menu.js`).
 3. Confirm the final file list shows `index.html` at the top level and `assets/` beside it.
 4. Enter a commit message such as `Add PUBLIQ static menu`, then select **Commit changes**.
 
@@ -60,7 +60,7 @@ Replace `YOUR-GITHUB-USERNAME` with your GitHub username and adjust the reposito
 
 ## 6. Change menu items or prices
 
-1. In the repository, open `index.html` and select the pencil/edit control.
+1. In the repository, open `assets/menu.js` and select the pencil/edit control.
 2. Search within the file for `const menuSections = [`.
 3. Each category is an object. For example:
 
