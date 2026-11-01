@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <meta name="theme-color" content="#0b0610">
   <meta name="description" content="The PUBLIQ Super Club Witching Hour menu — bar, food and café selections.">
   <link rel="icon" href="assets/publiq-super-club-icon.svg" type="image/svg+xml">
@@ -21,10 +22,29 @@
       --panel: #130d19;
       --panel2: #1a1021;
       --line: rgba(224, 176, 103, .38);
+=======
+  <meta name="theme-color" content="#10100e">
+  <meta name="description" content="The PUBLIQ Super Club bar menu — bottled spirits, cocktails, wines, beers, mocktails and more.">
+  <link rel="icon" href="assets/publiq-super-club-icon.svg" type="image/svg+xml">
+  <title>PUBLIQ Super Club · Bar Menu</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #f4f1e9;
+      --muted: #aaa69d;
+      --dim: #77746d;
+      --gold: #d7b66f;
+      --gold-bright: #edcf8a;
+      --night: #10100e;
+      --panel: #191916;
+      --panel-2: #21211c;
+      --line: rgba(255,255,255,.1);
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       --serif: Georgia, "Times New Roman", serif;
       --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
     * { box-sizing: border-box; }
+<<<<<<< HEAD
     html { scroll-behavior: smooth; scroll-padding-top: 112px; }
     body {
       margin: 0;
@@ -197,6 +217,120 @@
       .menu-section { padding-inline: 10px; }
       .menu-item { gap: 6px; }
       .item-name, .item-price { font-size: 10px; }
+=======
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--night); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .site-header { position: relative; z-index: 5; border-bottom: 1px solid rgba(255,255,255,.07); background: rgba(16,16,14,.96); }
+    .header-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 15px; text-decoration: none; min-width: 0; }
+    .brand img { display: block; width: 130px; height: 66px; object-fit: contain; }
+    .brand-copy { border-left: 1px solid rgba(215,182,111,.45); padding-left: 15px; }
+    .brand-copy strong { display: block; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+    .brand-copy span { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; }
+    .header-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold-bright); font-size: 12px; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+    .header-link:hover { color: #fff; }
+    .hero { position: relative; isolation: isolate; display: grid; min-height: 510px; align-items: center; overflow: hidden; border-bottom: 1px solid var(--line); background: #171612; }
+    .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(12,12,11,.92) 0%, rgba(12,12,11,.74) 39%, rgba(12,12,11,.2) 100%), linear-gradient(0deg, rgba(12,12,11,.55), transparent 55%); }
+    .hero-img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 53%; }
+    .hero-inner { position: relative; padding-block: 66px 72px; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; color: var(--gold-bright); font-size: 10px; font-weight: 700; letter-spacing: .23em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 27px; height: 1px; background: var(--gold); }
+    h1 { max-width: 640px; margin: 22px 0 16px; font-family: var(--serif); font-size: clamp(48px, 7.7vw, 88px); font-weight: 400; letter-spacing: -.045em; line-height: .98; }
+    .hero-lede { max-width: 420px; margin: 0; color: #dedbd4; font-size: 15px; line-height: 1.75; }
+    .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-top: 28px; }
+    .button-gold { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 10px; padding: 0 19px; border: 1px solid var(--gold); border-radius: 3px; background: var(--gold); color: #181611; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; transition: background .18s ease, transform .18s ease; }
+    .button-gold:hover { transform: translateY(-1px); background: var(--gold-bright); }
+    .photo-credit { position: absolute; right: 18px; bottom: 14px; color: rgba(255,255,255,.62); font-size: 10px; letter-spacing: .06em; }
+    .visual-strip { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; padding-block: 22px 36px; }
+    .visual-card { position: relative; height: 178px; overflow: hidden; border: 1px solid rgba(255,255,255,.09); border-radius: 5px; background: #1b1a16; }
+    .visual-card img { width: 100%; height: 100%; display: block; object-fit: cover; opacity: .86; transition: transform .5s ease, opacity .3s ease; }
+    .visual-card:hover img { transform: scale(1.035); opacity: 1; }
+    .visual-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7,7,7,.85), transparent 78%); pointer-events: none; }
+    .visual-card span { position: absolute; z-index: 1; left: 17px; bottom: 15px; color: #fff; font-family: var(--serif); font-size: 21px; }
+    .visual-note { grid-column: 1/-1; margin: -4px 0 0; color: var(--dim); font-size: 10px; text-align: right; }
+    .menu-area { padding: 34px 0 80px; border-top: 1px solid rgba(255,255,255,.05); }
+    .menu-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 25px; }
+    .menu-heading .eyebrow { margin-bottom: 12px; }
+    h2 { margin: 0; font-family: var(--serif); font-size: clamp(38px, 6vw, 60px); font-weight: 400; letter-spacing: -.035em; }
+    .menu-summary { max-width: 360px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; text-align: right; }
+    .tools { display: grid; grid-template-columns: minmax(220px, 1fr) auto; align-items: center; gap: 14px; margin: 24px 0 17px; }
+    .search-wrap { position: relative; }
+    .search-wrap .search-mark { position: absolute; top: 50%; left: 15px; color: var(--gold); font-size: 16px; transform: translateY(-52%); pointer-events: none; }
+    .search { width: 100%; min-height: 48px; padding: 0 45px 0 42px; border: 1px solid #38372e; border-radius: 4px; outline: none; background: #171714; color: var(--ink); font-size: 13px; }
+    .search::placeholder { color: #8e8a80; }
+    .search:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(215,182,111,.12); }
+    .clear-search { position: absolute; top: 50%; right: 9px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: #c6c2b8; font-size: 19px; cursor: pointer; transform: translateY(-50%); }
+    .clear-search:hover { background: #29271f; color: #fff; }
+    .result-count { color: var(--muted); font-size: 11px; text-align: right; white-space: nowrap; }
+    .category-nav { position: sticky; top: 0; z-index: 4; display: flex; gap: 8px; overflow-x: auto; padding: 12px 0 13px; margin: 0 0 18px; background: rgba(16,16,14,.97); scrollbar-width: thin; scrollbar-color: #5c4a29 transparent; }
+    .category-nav a { flex: 0 0 auto; display: inline-flex; min-height: 34px; align-items: center; padding: 0 13px; border: 1px solid #39372e; border-radius: 99px; color: #c7c2b6; font-size: 10px; letter-spacing: .06em; text-decoration: none; transition: all .18s ease; }
+    .category-nav a:hover, .category-nav a:focus-visible { border-color: var(--gold); background: rgba(215,182,111,.09); color: var(--gold-bright); outline: none; }
+    .menu-sections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 15px; }
+    .menu-section { min-width: 0; padding: 20px 19px 8px; border: 1px solid rgba(255,255,255,.085); border-radius: 5px; background: linear-gradient(145deg, rgba(32,32,27,.94), rgba(22,22,19,.98)); scroll-margin-top: 76px; }
+    .section-head { display: flex; align-items: start; justify-content: space-between; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .section-head h3 { margin: 0; color: #f1ede3; font-family: var(--serif); font-size: 24px; font-weight: 400; line-height: 1.15; }
+    .section-count { flex: 0 0 auto; padding: 5px 8px; border: 1px solid rgba(215,182,111,.27); border-radius: 99px; color: var(--gold-bright); font-size: 9px; letter-spacing: .06em; white-space: nowrap; }
+    .item-list { padding: 0; margin: 0; list-style: none; }
+    .menu-item { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 12px 1px; border-bottom: 1px solid rgba(255,255,255,.055); }
+    .menu-item:last-child { border-bottom: 0; }
+    .item-name { min-width: 0; color: #ddd9d0; font-size: 12px; line-height: 1.5; }
+    .item-price { flex: 0 0 auto; color: var(--gold-bright); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .empty-state { grid-column: 1/-1; padding: 38px 20px; border: 1px dashed #49463b; border-radius: 5px; color: var(--muted); text-align: center; }
+    .site-footer { border-top: 1px solid var(--line); background: #0b0b0a; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 92px; }
+    .footer-brand { color: #e4dfd5; font-family: var(--serif); font-size: 17px; }
+    .footer-note { color: var(--dim); font-size: 10px; letter-spacing: .05em; text-align: right; }
+    .to-top { position: fixed; right: 20px; bottom: 20px; z-index: 6; display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid rgba(215,182,111,.55); border-radius: 50%; background: rgba(20,19,16,.92); color: var(--gold-bright); text-decoration: none; opacity: 0; pointer-events: none; transform: translateY(6px); transition: opacity .18s ease, transform .18s ease; }
+    .to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    :focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 3px; }
+    @media (max-width: 740px) {
+      .wrap { width: min(100% - 28px, 560px); }
+      .header-inner { min-height: 72px; }
+      .brand { gap: 9px; }
+      .brand img { width: 102px; height: 56px; }
+      .brand-copy { padding-left: 9px; }
+      .brand-copy strong { font-size: 10px; letter-spacing: .12em; }
+      .brand-copy span { font-size: 8px; letter-spacing: .14em; }
+      .header-link { font-size: 10px; }
+      .hero { min-height: 520px; align-items: end; }
+      .hero::after { background: linear-gradient(0deg, rgba(9,9,8,.96) 1%, rgba(9,9,8,.76) 45%, rgba(9,9,8,.08) 100%); }
+      .hero-img { object-position: 58% center; }
+      .hero-inner { padding-block: 180px 50px; }
+      h1 { max-width: 460px; font-size: clamp(48px, 13vw, 68px); }
+      .hero-lede { font-size: 14px; }
+      .visual-strip { gap: 9px; padding-block: 13px 26px; }
+      .visual-card { height: 128px; }
+      .visual-card span { left: 11px; bottom: 11px; font-size: 17px; }
+      .visual-note { font-size: 9px; }
+      .menu-area { padding-top: 26px; }
+      .menu-heading { display: block; margin-bottom: 20px; }
+      .menu-summary { max-width: 100%; margin-top: 10px; text-align: left; }
+      .tools { grid-template-columns: 1fr; gap: 9px; margin-top: 20px; }
+      .result-count { text-align: left; }
+      .category-nav { margin-inline: -14px; padding: 11px 14px 13px; }
+      .menu-sections { grid-template-columns: 1fr; gap: 11px; }
+      .menu-section { padding: 18px 15px 7px; }
+      .section-head h3 { font-size: 22px; }
+      .menu-item { padding-block: 12px; }
+      .item-name, .item-price { font-size: 12px; }
+      .footer-inner { min-height: 86px; }
+      .footer-note { max-width: 170px; line-height: 1.5; }
+      .to-top { right: 13px; bottom: 13px; }
+    }
+    @media (max-width: 380px) {
+      .brand img { width: 86px; }
+      .brand-copy strong { font-size: 9px; }
+      .brand-copy span { letter-spacing: .1em; }
+      .header-link { letter-spacing: .07em; }
+      .visual-card { height: 112px; }
+      .visual-card span { font-size: 15px; }
+      .menu-section { padding-inline: 12px; }
+      .menu-item { gap: 8px; }
+      .item-name, .item-price { font-size: 11px; }
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -208,7 +342,11 @@
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="PUBLIQ Super Club home">
         <img src="assets/publiq-superclub-logo.jpg" alt="PUBLIQ Super Club">
+<<<<<<< HEAD
         <span class="brand-copy"><strong>PUBLIQ Super Club</strong><span>Food · Café · Bar</span></span>
+=======
+        <span class="brand-copy"><strong>PUBLIQ Super Club</strong><span>Bar Menu</span></span>
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       </a>
       <a class="header-link" href="#menu">Explore menu <span aria-hidden="true">↓</span></a>
     </div>
@@ -216,6 +354,7 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
+<<<<<<< HEAD
       <img class="hero-img" src="assets/witching-hour-hero.jpg" alt="Illustrative moonlit gothic club interior with candles, purple light and gold details" fetchpriority="high">
       <div class="wrap hero-inner">
         <div class="hero-copy">
@@ -230,10 +369,21 @@
           <strong>12% VAT</strong>
           <p>No additional service charge on food or bar orders.</p>
         </aside>
+=======
+      <img class="hero-img" src="assets/cocktail-hero.jpg" alt="Illustrative photograph of three cocktails on a warmly lit bar" fetchpriority="high">
+      <div class="wrap hero-inner">
+        <div class="eyebrow">PUBLIQ Super Club</div>
+        <h1 id="hero-title">The bar menu.</h1>
+        <p class="hero-lede">Bottles, cocktails, beers, mocktails and more.</p>
+        <div class="hero-actions">
+          <a class="button-gold" href="#menu">Browse the menu <span aria-hidden="true">↘</span></a>
+        </div>
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       </div>
       <div class="photo-credit">Illustrative photography</div>
     </section>
 
+<<<<<<< HEAD
     <div class="ornament-line" aria-hidden="true">✦ ✧ ✦</div>
 
     <section class="wrap visual-strip" aria-label="Illustrative menu photography">
@@ -241,6 +391,9 @@
         <img src="assets/cocktail-hero.jpg" alt="Illustrative photograph of cocktails on a dark bar" loading="lazy">
         <span>Cocktails</span>
       </figure>
+=======
+    <section class="wrap visual-strip" aria-label="Menu photography">
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       <figure class="visual-card">
         <img src="assets/spirits-stilllife.jpg" alt="Illustrative photograph of unbranded spirits bottles and a glass" loading="lazy">
         <span>Bottled spirits</span>
@@ -249,6 +402,7 @@
         <img src="assets/beer-bucket.jpg" alt="Illustrative photograph of a bucket of generic beer bottles" loading="lazy">
         <span>Beer buckets</span>
       </figure>
+<<<<<<< HEAD
       <figure class="visual-card">
         <img src="assets/witching-hour-food.jpg" alt="Illustrative photograph of a shared supper-club food spread" loading="lazy">
         <span>Food menu</span>
@@ -257,6 +411,8 @@
         <img src="assets/witching-hour-cafe.jpg" alt="Illustrative photograph of frappe, coffee and matcha drinks" loading="lazy">
         <span>Café menu</span>
       </figure>
+=======
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       <p class="visual-note">Menu photography is illustrative; images do not depict specific listed products.</p>
     </section>
 
@@ -264,6 +420,7 @@
       <div class="wrap">
         <div class="menu-heading">
           <div>
+<<<<<<< HEAD
             <div class="eyebrow">The PUBLIQ collection</div>
             <h2 id="menu-title">The Menu</h2>
           </div>
@@ -273,18 +430,34 @@
         <div class="menu-switch" aria-label="Jump to a menu">
           <a href="#bar-menu">✦ Bar Menu</a>
           <a href="#food-cafe-menu">✧ Food &amp; Café Menu</a>
+=======
+            <div class="eyebrow">PUBLIQ Super Club</div>
+            <h2 id="menu-title">Drinks &amp; more</h2>
+          </div>
+          <p class="menu-summary">Browse the list below or search for a favorite. Prices are displayed exactly as supplied.</p>
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
         </div>
         <div class="tools">
           <div class="search-wrap">
             <span class="search-mark" aria-hidden="true">⌕</span>
+<<<<<<< HEAD
             <label for="menuSearch" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Search the menu</label>
             <input class="search" id="menuSearch" type="search" placeholder="Search items or menu sections…" autocomplete="off" spellcheck="false">
+=======
+            <label for="menuSearch" class="sr-only" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Search the menu</label>
+            <input class="search" id="menuSearch" type="search" placeholder="Search drinks or categories…" autocomplete="off" spellcheck="false">
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
             <button class="clear-search" id="clearSearch" type="button" aria-label="Clear search" hidden>×</button>
           </div>
           <div class="result-count" id="resultCount" aria-live="polite"></div>
         </div>
+<<<<<<< HEAD
         <nav class="category-nav" id="categoryNav" aria-label="Menu sections"></nav>
         <div id="menuSections"></div>
+=======
+        <nav class="category-nav" id="categoryNav" aria-label="Menu categories"></nav>
+        <div class="menu-sections" id="menuSections"></div>
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       </div>
     </section>
   </main>
@@ -298,6 +471,7 @@
   <a class="to-top" href="#top" id="toTop" aria-label="Back to top">↑</a>
 
   <script>
+<<<<<<< HEAD
     // Menu data is kept in one place so names and prices can be edited easily.
     // Prices are text to preserve peso signs, commas and the supplied asterisks.
     const menuSections = [
@@ -455,6 +629,129 @@
       { key: "bar", id: "bar-menu", title: "Bar Menu", kicker: "Bottles · Cocktails · More" },
       { key: "food", id: "food-cafe-menu", title: "Food & Café Menu", kicker: "Food · Frappes · Coffee" }
     ];
+=======
+    // Menu values below are intentionally kept together for easy editing.
+    // Prices are text so the supplied peso formatting and asterisks stay exact.
+    const menuSections = [
+      {
+        id: "bottled-spirits",
+        title: "Bottled Spirits",
+        items: [
+          { name: "Jim Beam", price: "₱3,299" },
+          { name: "Chivas Regal 12 Years", price: "₱2,859" },
+          { name: "Johnnie Walker Black (700ml)", price: "₱2,859" },
+          { name: "Johnnie Walker Blue Label (750ml)", price: "₱13,750" },
+          { name: "Johnnie Walker Red Label (700ml)", price: "₱1,329" },
+          { name: "Johnnie Walker Double Black (700ml)", price: "₱3,099" },
+          { name: "Jack Daniel’s (700ml)", price: "₱3,299" },
+          { name: "Jose Cuervo (700ml)", price: "₱2,299" },
+          { name: "Tequila Rose (700ml)", price: "₱2,649" },
+          { name: "Alfonso Light (1L)", price: "₱899" },
+          { name: "Fundador Light (1L)", price: "₱1,199" },
+          { name: "Absolut Vodka", price: "₱2,199" },
+          { name: "Absolut Kurant", price: "₱2,199" },
+          { name: "Tanqueray (750ml)", price: "₱2,999" },
+          { name: "Bacardi (750ml)", price: "₱1,999" },
+          { name: "Captain Morgan (700ml)", price: "₱1,299" }
+        ]
+      },
+      {
+        id: "cocktails",
+        title: "Cocktails",
+        items: [
+          { name: "Margarita", price: "₱209" },
+          { name: "Long Island Iced Tea", price: "₱209" },
+          { name: "Old Fashioned", price: "₱299" },
+          { name: "Whisky Smash", price: "₱249" },
+          { name: "Gold Rush", price: "₱359" },
+          { name: "Espresso Martini", price: "₱249" },
+          { name: "Gin & Tonic", price: "₱209" },
+          { name: "Vodka Tonic", price: "₱209" },
+          { name: "Cuba Libre", price: "₱249" },
+          { name: "Flaming Volcano", price: "₱299" },
+          { name: "Blowjob", price: "₱199" },
+          { name: "Basil Mash", price: "₱199" }
+        ]
+      },
+      {
+        id: "wines",
+        title: "Wines – Per Bottle",
+        items: [
+          { name: "Red Wine", price: "₱1,329" },
+          { name: "White Wine", price: "₱1,329" },
+          { name: "Bottega Sparkling", price: "₱3,999" },
+          { name: "Yellow Tail Sparkling", price: "₱1,999" }
+        ]
+      },
+      {
+        id: "beers",
+        title: "Beers",
+        items: [
+          { name: "San Miguel Light", price: "₱119" },
+          { name: "San Miguel Pale Pilsen", price: "₱119" },
+          { name: "San Miguel Apple", price: "₱119" },
+          { name: "Red Horse", price: "₱119" },
+          { name: "Smirnoff Mule", price: "₱129" },
+          { name: "Heineken", price: "₱155" }
+        ]
+      },
+      {
+        id: "beer-buckets",
+        title: "Beer Buckets – 6 Bottles",
+        items: [
+          { name: "Red Horse", price: "₱649" },
+          { name: "San Miguel Pale Pilsen", price: "₱649" },
+          { name: "San Miguel Apple", price: "₱649" }
+        ]
+      },
+      {
+        id: "shots",
+        title: "Shots",
+        items: [
+          { name: "Jose Cuervo Tequila", price: "₱165" },
+          { name: "Jack Daniel’s", price: "₱165" },
+          { name: "Johnnie Walker Black", price: "₱165" },
+          { name: "Chivas Regal 12 Years", price: "₱165" }
+        ]
+      },
+      {
+        id: "cocktail-towers",
+        title: "Cocktail Towers – 3 Liters",
+        items: [
+          { name: "PUBLIQ Sunrise", price: "₱719" },
+          { name: "Lime Time", price: "₱719" },
+          { name: "Blush Hour", price: "₱719" }
+        ]
+      },
+      {
+        id: "mocktails",
+        title: "Mocktails",
+        items: [
+          { name: "Lemonade", price: "₱175" },
+          { name: "Cranberry Soda", price: "₱175" },
+          { name: "Virgin Mojito", price: "₱175" },
+          { name: "Cucumber Basil Lemonade", price: "₱175" },
+          { name: "Virgin Long Island Tea", price: "₱175" }
+        ]
+      },
+      {
+        id: "beverages-mixers",
+        title: "Beverages & Mixers",
+        items: [
+          { name: "Coke (Can)", price: "₱119" },
+          { name: "Sprite (Can)", price: "₱119" },
+          { name: "Four Seasons (Can)", price: "₱119*" },
+          { name: "Pineapple Juice (Can)", price: "₱119*" },
+          { name: "Orange Juice (Can)", price: "₱119*" },
+          { name: "Tonic Water (Can)", price: "₱139" },
+          { name: "Bottled Water (500ml)", price: "₱55" },
+          { name: "Coke (1.5L)", price: "₱219" },
+          { name: "Sprite (1.5L)", price: "₱219" }
+        ]
+      }
+    ];
+
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
     const totalItems = menuSections.reduce((sum, section) => sum + section.items.length, 0);
     const categoryNav = document.getElementById("categoryNav");
     const menuRoot = document.getElementById("menuSections");
@@ -462,6 +759,7 @@
     const clearButton = document.getElementById("clearSearch");
     const resultCount = document.getElementById("resultCount");
 
+<<<<<<< HEAD
     function createItemList(items, extraClass = "") {
       const list = document.createElement("ul");
       list.className = `item-list ${extraClass}`.trim();
@@ -510,11 +808,14 @@
       return card;
     }
 
+=======
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
     function renderMenu(searchTerm = "") {
       const query = searchTerm.trim().toLocaleLowerCase();
       categoryNav.replaceChildren();
       menuRoot.replaceChildren();
       let visibleItems = 0;
+<<<<<<< HEAD
       let visibleCategories = 0;
       let visibleGroups = 0;
 
@@ -565,11 +866,59 @@
         for (const { section, items } of matchedSections) grid.append(createMenuCard(section, items));
         groupElement.append(heading, grid);
         menuRoot.append(groupElement);
+=======
+      let visibleSections = 0;
+
+      for (const section of menuSections) {
+        const matches = section.items.filter((item) => `${item.name} ${item.price} ${section.title}`.toLocaleLowerCase().includes(query));
+        if (query && matches.length === 0) continue;
+        visibleSections += 1;
+        visibleItems += matches.length;
+
+        const navLink = document.createElement("a");
+        navLink.href = `#${section.id}`;
+        navLink.textContent = section.title;
+        categoryNav.append(navLink);
+
+        const sectionElement = document.createElement("section");
+        sectionElement.className = "menu-section";
+        sectionElement.id = section.id;
+        sectionElement.setAttribute("aria-labelledby", `${section.id}-title`);
+
+        const sectionHeader = document.createElement("div");
+        sectionHeader.className = "section-head";
+        const heading = document.createElement("h3");
+        heading.id = `${section.id}-title`;
+        heading.textContent = section.title;
+        const count = document.createElement("span");
+        count.className = "section-count";
+        count.textContent = `${matches.length} ${matches.length === 1 ? "item" : "items"}`;
+        sectionHeader.append(heading, count);
+
+        const list = document.createElement("ul");
+        list.className = "item-list";
+        for (const item of matches) {
+          const row = document.createElement("li");
+          row.className = "menu-item";
+          const name = document.createElement("span");
+          name.className = "item-name";
+          name.textContent = item.name;
+          const price = document.createElement("span");
+          price.className = "item-price";
+          price.textContent = item.price;
+          row.append(name, price);
+          list.append(row);
+        }
+
+        sectionElement.append(sectionHeader, list);
+        menuRoot.append(sectionElement);
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       }
 
       if (visibleItems === 0) {
         const empty = document.createElement("div");
         empty.className = "empty-state";
+<<<<<<< HEAD
         empty.textContent = "No menu items match that search. Try another name or section.";
         menuRoot.append(empty);
         resultCount.textContent = "No results";
@@ -577,6 +926,15 @@
         resultCount.textContent = `${visibleItems} ${visibleItems === 1 ? "item" : "items"} in ${visibleCategories} ${visibleCategories === 1 ? "section" : "sections"}`;
       } else {
         resultCount.textContent = `${totalItems} items · ${menuSections.length} sections`;
+=======
+        empty.textContent = "No menu items match that search. Try another name or category.";
+        menuRoot.append(empty);
+        resultCount.textContent = "No results";
+      } else if (query) {
+        resultCount.textContent = `${visibleItems} ${visibleItems === 1 ? "item" : "items"} in ${visibleSections} ${visibleSections === 1 ? "category" : "categories"}`;
+      } else {
+        resultCount.textContent = `${totalItems} items · ${menuSections.length} categories`;
+>>>>>>> c6e5a78fcc1d80d40efbc03ef1ddafccbf16905e
       }
       clearButton.hidden = !query;
     }
