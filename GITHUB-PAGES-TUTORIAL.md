@@ -2,7 +2,7 @@
 
 This folder is a **static website**: `index.html`, a separate `assets/styles.css` stylesheet, a separate `assets/menu.js` script, and local image files. It needs no admin login, database, API, server, Vercel Function, environment variables, or build command.
 
-The page combines the latest bar menu with the earlier Food & Café list. It has **15 sections and 118 items**. Menu names and prices come from your supplied lists—not from text in the reference posters. The “Witching Hour Food Bundles” shown in the reference were omitted because their exact bundle contents and prices were not supplied. The page includes the notice you selected: all prices include 12% VAT, and no additional service charge applies to food or bar orders. The three juice-price asterisks are preserved; no footnote was provided.
+The page combines the bar menu with the Food & Café list: **15 sections and 119 menu items**, plus the featured Red Flag cocktail, six REDnight bundle offers, and the event details supplied in the latest poster. The original typed menu names and prices remain in place; the new cocktail, bundle contents/prices/savings, and event copy come from the poster you approved. The notice says all prices include 12% VAT and no additional service charge applies to food or bar orders. The three juice-price asterisks are preserved; no footnote was supplied.
 
 ## 1. Download and unzip the site
 
@@ -32,7 +32,7 @@ Use a new, clean repository for this static version. Do not upload the old serve
 ## 3. Upload the page and pictures
 
 1. In the new repository, select **Add file** → **Upload files**.
-2. Upload `index.html`, `.nojekyll`, `README.md`, `GITHUB-PAGES-TUTORIAL.md`, and the complete `assets` folder with all ten files inside it (the images, logo, icon, `styles.css`, and `menu.js`).
+2. Upload `index.html`, `.nojekyll`, `README.md`, `GITHUB-PAGES-TUTORIAL.md`, and the complete `assets` folder with all eight files inside it (four photos, logo, icon, `styles.css`, and `menu.js`).
 3. Confirm the final file list shows `index.html` at the top level and `assets/` beside it.
 4. Enter a commit message such as `Add PUBLIQ static menu`, then select **Commit changes**.
 
@@ -71,22 +71,24 @@ Replace `YOUR-GITHUB-USERNAME` with your GitHub username and adjust the reposito
 4. Edit the name or price, keeping the quotes, commas, and brackets.
 5. Select **Commit changes**. GitHub Pages republishes after the commit.
 
-Prices are stored as text so peso signs, commas, and the supplied asterisks display exactly. If you add a new category, copy one existing section object and give it a new `id`, a `group` of `bar` or `food`, a `title`, and an `items` list.
+Prices are stored as text so peso signs, commas, and the supplied asterisks display exactly. If you add a new category, copy one existing section object and give it a new `id`, a `group` of `bar` or `food`, a `title`, and an `items` list. Red Flag is listed in the Cocktails section. The REDnight bundle cards are stored in `const foodBundles = [` in the same file.
+
+To change the event date, DJ, or doors time, edit the `event-card` block in `index.html`.
 
 ## 7. Replace the illustrative photos
 
 The current pictures are illustrative and do not show the exact listed brands or dishes. To use real PUBLIQ photography, replace the relevant files under `assets/` and keep the filenames, or update the matching `src="assets/..."` in `index.html`:
 
 ```text
-witching-hour-hero.jpg
-cocktail-hero.jpg
-spirits-stilllife.jpg
-beer-bucket.jpg
-witching-hour-food.jpg
-witching-hour-cafe.jpg
+rednight-hero.jpg
+rednight-food.jpg
+rednight-drink.jpg
+rednight-cafe.jpg
 publiq-superclub-logo.jpg
 publiq-super-club-icon.svg
 ```
+
+`styles.css` and `menu.js` are also in `assets/`; keep those files when replacing photos.
 
 Upload the replacements and commit. Filenames are case-sensitive on GitHub Pages.
 

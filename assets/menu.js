@@ -31,7 +31,8 @@
         { name: "Cuba Libre", price: "₱249" },
         { name: "Flaming Volcano", price: "₱299" },
         { name: "Blowjob", price: "₱199" },
-        { name: "Basil Mash", price: "₱199" }
+        { name: "Basil Mash", price: "₱199" },
+        { name: "Red Flag", price: "₱209", note: "PUBLIQ Signature Cocktail · Vodka · Cranberry Juice · Lime" }
       ]},
       { id: "wines", group: "bar", title: "Wines – Per Bottle", items: [
         { name: "Red Wine", price: "₱1,329" },
@@ -151,11 +152,21 @@
       ]}
     ];
 
+    const foodBundles = [
+      { title: "First Offense", items: ["Nachos", "Dynamite", "Mozzarella Sticks"], price: "₱649", saving: "₱120" },
+      { title: "Guilty Pleasure", items: ["Truffle Fries", "Buffalo Wings", "Onion Rings"], price: "₱749", saving: "₱166" },
+      { title: "Kiss & Tell", items: ["Gyoza", "Calamares", "Chicken Skin"], price: "₱649", saving: "₱146" },
+      { title: "Bad Decisions", items: ["Half Fried Chicken", "Carbonara", "Wedge Cut Fries"], price: "₱949", saving: "₱130" },
+      { title: "Code Red", items: ["Sisig", "Buttered Chicken", "Pancit Mix", "Dynamite"], price: "₱1,149", saving: "₱236" },
+      { title: "After Dark Feast", items: ["Crispy Pata", "Buffalo Wings", "Nachos", "Gyoza", "Truffle Fries"], price: "₱1,799", saving: "₱401" }
+    ];
+
     const menuGroups = [
-      { key: "bar", id: "bar-menu", title: "Bar Menu", kicker: "Bottles · Cocktails · More" },
-      { key: "food", id: "food-cafe-menu", title: "Food & Café Menu", kicker: "Food · Frappes · Coffee" }
+      { key: "bar", id: "bar-menu", title: "REDnight Bar Menu", kicker: "Bottled Spirits · Cocktails · More" },
+      { key: "food", id: "food-cafe-menu", title: "REDnight Food & Café Menu", kicker: "Food · Frappes · Coffee" }
     ];
     const totalItems = menuSections.reduce((sum, section) => sum + section.items.length, 0);
+    const totalBundles = foodBundles.length;
     const categoryNav = document.getElementById("categoryNav");
     const menuRoot = document.getElementById("menuSections");
     const searchInput = document.getElementById("menuSearch");
@@ -168,13 +179,22 @@
       for (const item of items) {
         const row = document.createElement("li");
         row.className = "menu-item";
+        const copy = document.createElement("span");
+        copy.className = "item-copy";
         const name = document.createElement("span");
         name.className = "item-name";
         name.textContent = item.name;
+        copy.append(name);
+        if (item.note) {
+          const note = document.createElement("span");
+          note.className = "item-note";
+          note.textContent = item.note;
+          copy.append(note);
+        }
         const price = document.createElement("span");
         price.className = "item-price";
         price.textContent = item.price;
-        row.append(name, price);
+        row.append(copy, price);
         list.append(row);
       }
       return list;
@@ -210,30 +230,78 @@
       return card;
     }
 
+    function createBundleSection(bundles) {
+      const section = document.createElement("section");
+      section.id = "rednight-bundles";
+      section.className = "bundle-section";
+      section.setAttribute("aria-labelledby", "rednight-bundles-title");
+      const heading = document.createElement("div");
+      heading.className = "bundle-heading";
+      const title = document.createElement("h4");
+      title.id = "rednight-bundles-title";
+      title.textContent = "REDnight Food Bundles";
+      const subtitle = document.createElement("p");
+      subtitle.textContent = "Special Sets for Tonight";
+      heading.append(title, subtitle);
+      const grid = document.createElement("div");
+      grid.className = "bundle-grid";
+      for (const bundle of bundles) {
+        const card = document.createElement("article");
+        card.className = "bundle-card";
+        const name = document.createElement("h5");
+        name.textContent = bundle.title;
+        const includes = document.createElement("p");
+        includes.className = "bundle-includes";
+        includes.textContent = bundle.items.join(" · ");
+        const prices = document.createElement("div");
+        prices.className = "bundle-prices";
+        const price = document.createElement("strong");
+        price.className = "bundle-price";
+        price.textContent = bundle.price;
+        const saving = document.createElement("span");
+        saving.className = "bundle-saving";
+        saving.textContent = `Save ${bundle.saving}`;
+        prices.append(price, saving);
+        card.append(name, includes, prices);
+        grid.append(card);
+      }
+      section.append(heading, grid);
+      return section;
+    }
+
     function renderMenu(searchTerm = "") {
       const query = searchTerm.trim().toLocaleLowerCase();
       categoryNav.replaceChildren();
       menuRoot.replaceChildren();
       let visibleItems = 0;
       let visibleCategories = 0;
-      let visibleGroups = 0;
+      let visibleBundles = 0;
 
       for (const group of menuGroups) {
         const groupSections = menuSections.filter((section) => section.group === group.key);
         const matchedSections = groupSections.map((section) => ({
           section,
-          items: section.items.filter((item) => `${item.name} ${item.price} ${section.title} ${group.title}`.toLocaleLowerCase().includes(query))
+          items: section.items.filter((item) => `${item.name} ${item.price} ${item.note ?? ""} ${section.title} ${group.title}`.toLocaleLowerCase().includes(query))
         })).filter(({ items }) => !query || items.length > 0);
-        if (matchedSections.length === 0) continue;
-        visibleGroups += 1;
+        const matchedBundles = group.key === "food" ? foodBundles.filter((bundle) =>
+          `${bundle.title} ${bundle.items.join(" ")} ${bundle.price} ${bundle.saving} rednight food bundles`.toLocaleLowerCase().includes(query)
+        ) : [];
+        if (matchedSections.length === 0 && matchedBundles.length === 0) continue;
         visibleCategories += matchedSections.length;
         visibleItems += matchedSections.reduce((sum, row) => sum + row.items.length, 0);
+        visibleBundles += matchedBundles.length;
 
         const groupLink = document.createElement("a");
         groupLink.className = "group-chip";
         groupLink.href = `#${group.id}`;
         groupLink.textContent = group.title;
         categoryNav.append(groupLink);
+        if (matchedBundles.length > 0) {
+          const bundleLink = document.createElement("a");
+          bundleLink.href = "#rednight-bundles";
+          bundleLink.textContent = "REDnight Bundles";
+          categoryNav.append(bundleLink);
+        }
         for (const { section } of matchedSections) {
           const link = document.createElement("a");
           link.href = `#${section.id}`;
@@ -258,25 +326,33 @@
         const groupCount = document.createElement("span");
         groupCount.className = "group-count";
         const countItems = matchedSections.reduce((sum, row) => sum + row.items.length, 0);
-        groupCount.textContent = `${countItems} items · ${matchedSections.length} sections`;
+        const countParts = [`${countItems} items`, `${matchedSections.length} sections`];
+        if (matchedBundles.length > 0) countParts.push(`${matchedBundles.length} bundles`);
+        groupCount.textContent = countParts.join(" · ");
         heading.append(titleWrap, groupCount);
+        groupElement.append(heading);
+        if (matchedBundles.length > 0) groupElement.append(createBundleSection(matchedBundles));
         const grid = document.createElement("div");
         grid.className = "menu-grid";
         for (const { section, items } of matchedSections) grid.append(createMenuCard(section, items));
-        groupElement.append(heading, grid);
+        groupElement.append(grid);
         menuRoot.append(groupElement);
       }
 
-      if (visibleItems === 0) {
+      if (visibleItems === 0 && visibleBundles === 0) {
         const empty = document.createElement("div");
         empty.className = "empty-state";
-        empty.textContent = "No menu items match that search. Try another name or section.";
+        empty.textContent = "No menu items or bundles match that search. Try another name or section.";
         menuRoot.append(empty);
         resultCount.textContent = "No results";
       } else if (query) {
-        resultCount.textContent = `${visibleItems} ${visibleItems === 1 ? "item" : "items"} in ${visibleCategories} ${visibleCategories === 1 ? "section" : "sections"}`;
+        const countParts = [];
+        if (visibleItems > 0) countParts.push(`${visibleItems} ${visibleItems === 1 ? "item" : "items"}`);
+        if (visibleBundles > 0) countParts.push(`${visibleBundles} ${visibleBundles === 1 ? "bundle" : "bundles"}`);
+        if (visibleCategories > 0) countParts.push(`${visibleCategories} ${visibleCategories === 1 ? "section" : "sections"}`);
+        resultCount.textContent = countParts.join(" · ");
       } else {
-        resultCount.textContent = `${totalItems} items · ${menuSections.length} sections`;
+        resultCount.textContent = `${totalItems} items · ${menuSections.length} sections · ${totalBundles} bundles`;
       }
       clearButton.hidden = !query;
     }

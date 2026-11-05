@@ -4,40 +4,50 @@
 
 <h1 align="center">PUBLIQ Super Club</h1>
 <p align="center">
-  <strong>WITCHING HOUR</strong><br>
+  <strong>REDnight</strong><br>
   <sub>FOOD · CAFÉ · BAR MENU</sub>
 </p>
 
 <p align="center">
-  <img src="assets/witching-hour-hero.jpg" alt="The moonlit, candlelit PUBLIQ Super Club Witching Hour atmosphere" width="100%">
+  <img src="assets/rednight-hero.jpg" alt="The red-lit PUBLIQ Super Club REDnight atmosphere" width="100%">
 </p>
 
-<p align="center"><em>A little moonlight. A favorite pour. A table worth lingering over.</em></p>
+<p align="center"><em>Red Lights. Bad Decisions.</em></p>
 
 ---
 
-## The Menu
+## REDnight at PUBLIQ
 
-A collection for nights that move from the first round to one more cup. Explore the bar, share a meal, or settle in with something from the café—all in one easy-to-browse menu.
+A night of good drinks, food for the table, café favorites, and a dance-floor soundtrack. Explore the full menu, discover the REDnight food bundles, and meet the drink of the night: **Red Flag**.
 
-### Bar Menu
+### The Bar
 
 Bottled Spirits · Cocktails · Wines by the Bottle · Beers · Beer Buckets · Shots · Cocktail Towers · Mocktails · Beverages &amp; Mixers
 
-### Food &amp; Café Menu
+### Food &amp; Café
 
-Food Menu · Frappes · Iced Caffeinated Drinks · Hot Caffeinated Drinks · Iced Non-Coffee Drinks · Hot Non-Coffee Drinks
+REDnight Food Bundles · Food Menu · Frappes · Iced Caffeinated Drinks · Hot Caffeinated Drinks · Iced Non-Coffee Drinks · Hot Non-Coffee Drinks
 
 > **All prices include 12% VAT. No additional service charge applies to food or bar orders.**
 
+## Event Night
+
+**Friday, November 6, 2026** · **DJ Rain** · Doors open at **9 PM**
+
+## The Drink of the Night
+
+### Red Flag · ₱209
+
+**PUBLIQ Signature Cocktail** — Vodka · Cranberry Juice · Lime
+
 ---
 
-## A Taste of the Atmosphere
+## A Taste of REDnight
 
 <p align="center">
-  <img src="assets/witching-hour-food.jpg" alt="Illustrative supper-club food spread" width="32%">
-  <img src="assets/cocktail-hero.jpg" alt="Illustrative cocktail selection" width="32%">
-  <img src="assets/witching-hour-cafe.jpg" alt="Illustrative café drinks" width="32%">
+  <img src="assets/rednight-food.jpg" alt="Illustrative REDnight food spread" width="32%">
+  <img src="assets/rednight-drink.jpg" alt="Illustrative red cocktail" width="32%">
+  <img src="assets/rednight-cafe.jpg" alt="Illustrative café drinks" width="32%">
 </p>
 
 *Photography is illustrative and does not depict specific menu products or brands.*
@@ -45,6 +55,6 @@ Food Menu · Frappes · Iced Caffeinated Drinks · Hot Caffeinated Drinks · Ice
 ---
 
 <p align="center">
-  <strong>15 sections · 118 menu items · Philippine peso pricing</strong><br>
-  <sub>A single-page menu for PUBLIQ Super Club, designed for easy browsing on mobile and desktop.</sub>
+  <strong>15 menu sections · 119 menu items · 6 REDnight bundles</strong><br>
+  <sub>One easy-to-browse PUBLIQ Super Club menu for mobile and desktop.</sub>
 </p>
