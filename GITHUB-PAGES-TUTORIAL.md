@@ -2,7 +2,7 @@
 
 This is a **static website**: `index.html`, a separate `assets/styles.css` stylesheet, a separate `assets/menu.js` script, and local image files. It needs no admin login, database, API, server, Vercel Function, environment variables, or build command.
 
-The current site uses the latest supplied menu posters as the complete source for standard names and prices: **18 menu sections and 114 menu items**, plus six Ladies Night food bundles and the Tropical Kiss first-drink promotion. The menu includes the selected notice that all prices include 12% VAT and no additional service charge applies to food or bar orders. Event details are Saturday, November 7, 2026; Beats by GUEST; doors open at 9 PM.
+The current site uses the latest supplied menu posters as the complete source for standard names and prices: **18 menu sections and 114 menu items**. It also includes **nine everyday bundles** in the regular menu, six Ladies Night food specials, and the Tropical Kiss first-drink promotion. The menu includes the selected notice that all prices include 12% VAT and no additional service charge applies to food or bar orders. Event details are Saturday, November 7, 2026; Beats by GUEST; doors open at 9 PM.
 
 ## 1. Download and unzip the site
 
@@ -67,9 +67,10 @@ Replace `YOUR-GITHUB-USERNAME` with your GitHub username and adjust the reposito
    { name: "Jim Beam", price: "₱3,299" },
    ```
 
-3. The six Ladies Night bundle cards are stored in `const ladiesNightBundles = [`; each bundle has its contents, crossed-out poster price (`was`), and current price.
-4. Tropical Kiss is in the Cocktails section as the Ladies Night first-drink offer.
-5. Select **Commit changes**. GitHub Pages republishes after the commit.
+3. The nine everyday bundles are stored in `const everydayBundles = [` and are labeled **Available every day** on the site. Each has a category, its contents, and a price.
+4. The six Ladies Night-only food offers are stored in `const ladiesNightBundles = [`; each has its contents, crossed-out poster price (`was`), and current price.
+5. Tropical Kiss is in the Cocktails section as the Ladies Night first-drink offer.
+6. Select **Commit changes**. GitHub Pages republishes after the commit.
 
 Prices are stored as text so peso signs, commas, and offer wording display as supplied. To change the event date, performer text, or doors time, edit the `event-card` block in `index.html`.
 

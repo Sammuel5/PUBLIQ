@@ -114,12 +114,15 @@
     .bundle-heading { display: flex; align-items: end; justify-content: space-between; gap: 12px; padding: 0 4px 11px; margin-bottom: 12px; border-bottom: 1px solid rgba(241,65,167,.5); }
     .bundle-heading h4 { margin: 0; color: #fff0f2; font-family: var(--serif); font-size: 27px; font-style: italic; font-weight: 400; letter-spacing: .025em; }
     .bundle-heading p { margin: 0; color: var(--gold-light); font-family: var(--serif); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+    .bundle-category + .bundle-category { padding-top: 14px; margin-top: 15px; border-top: 1px solid rgba(241,65,167,.34); }
+    .bundle-category-title { margin: 0 0 9px; color: var(--gold-light); font-family: var(--serif); font-size: 18px; font-style: italic; font-weight: 400; letter-spacing: .04em; }
     .bundle-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
     .bundle-card { position: relative; min-width: 0; padding: 13px 12px 11px; border: 1px solid rgba(255,74,182,.62); background: linear-gradient(145deg, rgba(77,8,54,.72), rgba(20,5,17,.94)); box-shadow: inset 0 0 0 2px rgba(255,60,172,.045); }
     .bundle-card::before { content: "✦"; position: absolute; top: 5px; right: 7px; color: var(--gold-light); font-size: 10px; }
     .bundle-card h5 { margin: 0 14px 7px 0; color: #fff2f2; font-family: var(--serif); font-size: 22px; font-style: italic; font-weight: 400; line-height: 1.1; }
     .bundle-includes { min-height: 42px; margin: 0; color: #f0dfe1; font-size: 13px; line-height: 1.45; }
     .bundle-prices { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 9px; margin-top: 8px; border-top: 1px solid rgba(255,255,255,.1); }
+    .bundle-prices-current { justify-content: flex-end; }
     .bundle-price { color: var(--gold-light); font-family: var(--serif); font-size: 23px; font-weight: 700; white-space: nowrap; }
     .bundle-saving { padding: 4px 7px; border: 1px solid rgba(255,70,180,.47); color: #fff0f2; font-size: 11px; font-weight: 800; white-space: nowrap; }
     .bundle-was { color: var(--dim); font-family: var(--serif); font-size: 16px; white-space: nowrap; }

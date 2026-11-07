@@ -162,12 +162,24 @@ const ladiesNightBundles = [
   { title: "Queen’s Table", items: ["Crispy Pata", "Buttered Chicken", "Pancit Mix", "Tempura", "Truffle Fries"], was: "₱2,500", price: "₱1,999" }
 ];
 
+const everydayBundles = [
+  { category: "Liquor & Food Bundles", title: "The Jackpot", items: ["Jack Daniel’s 700ml", "Coke 1.5L", "Crispy Pata", "Pork Sisig", "Nachos"], price: "₱4,249" },
+  { category: "Liquor & Food Bundles", title: "Blackout", items: ["Johnnie Walker Black Label 700ml", "Coke 1.5L", "Half Fried Chicken", "Dinakdakan", "Breaded Cheese Sticks"], price: "₱3,499" },
+  { category: "Liquor & Food Bundles", title: "Tequila Takeover", items: ["Jose Cuervo 700ml", "Sliced Lemon", "Tempura", "Calamares", "Gyoza"], price: "₱2,699" },
+  { category: "Cocktail Tower Bundles", title: "Double Trouble", items: ["2 Cocktail Towers (3L each)", "Pork Sisig", "Chicken Skin"], price: "₱1,649" },
+  { category: "Cocktail Tower Bundles", title: "After Hours", items: ["2 Cocktail Towers (3L each)", "Dinakdakan", "Crispy Chicken Isaw"], price: "₱1,699" },
+  { category: "Cocktail Tower Bundles", title: "Tower of Temptation", items: ["2 Cocktail Towers (3L each)", "Truffle Fries", "Buffalo Wings"], price: "₱1,799" },
+  { category: "Beer Bucket Bundles", title: "Bucket List", items: ["2 Beer Buckets (6 bottles each)", "Pork Sisig", "Chicken Skin"], price: "₱1,499" },
+  { category: "Beer Bucket Bundles", title: "Buzzed & Bites", items: ["2 Beer Buckets (6 bottles each)", "Dinakdakan", "Crispy Chicken Isaw"], price: "₱1,599" },
+  { category: "Beer Bucket Bundles", title: "The Last Round", items: ["2 Beer Buckets (6 bottles each)", "Truffle Fries", "Buffalo Wings"], price: "₱1,699" }
+];
+
 const menuGroups = [
   { key: "bar", id: "bar-menu", title: "PUBLIQ Bar Menu", kicker: "Cocktails · Bottled Spirits · More" },
   { key: "food", id: "food-cafe-menu", title: "Food & Café Menu", kicker: "Food Menu · Café Menu" }
 ];
 const totalItems = menuSections.reduce((sum, section) => sum + section.items.length, 0);
-const totalBundles = ladiesNightBundles.length;
+const totalBundles = everydayBundles.length + ladiesNightBundles.length;
 const categoryNav = document.getElementById("categoryNav");
 const menuRoot = document.getElementById("menuSections");
 const searchInput = document.getElementById("menuSearch");
@@ -230,42 +242,67 @@ function createMenuCard(section, items) {
   return card;
 }
 
-function createBundleSection(bundles) {
-  const section = document.createElement("section");
-  section.id = "ladies-night-bundles";
-  section.className = "bundle-section";
-  section.setAttribute("aria-labelledby", "ladies-night-bundles-title");
-  const heading = document.createElement("div");
-  heading.className = "bundle-heading";
-  const title = document.createElement("h4");
-  title.id = "ladies-night-bundles-title";
-  title.textContent = "Ladies Night Food Bundles";
-  const subtitle = document.createElement("p");
-  subtitle.textContent = "Exclusive food bundles for tonight only";
-  heading.append(title, subtitle);
-  const grid = document.createElement("div");
-  grid.className = "bundle-grid";
-  for (const bundle of bundles) {
-    const card = document.createElement("article");
-    card.className = "bundle-card";
-    const name = document.createElement("h5");
-    name.textContent = bundle.title;
-    const includes = document.createElement("p");
-    includes.className = "bundle-includes";
-    includes.textContent = bundle.items.join(" · ");
-    const prices = document.createElement("div");
-    prices.className = "bundle-prices";
+function createBundleCard(bundle) {
+  const card = document.createElement("article");
+  card.className = "bundle-card";
+  const name = document.createElement("h5");
+  name.textContent = bundle.title;
+  const includes = document.createElement("p");
+  includes.className = "bundle-includes";
+  includes.textContent = bundle.items.join(" · ");
+  const prices = document.createElement("div");
+  prices.className = bundle.was ? "bundle-prices" : "bundle-prices bundle-prices-current";
+  if (bundle.was) {
     const was = document.createElement("s");
     was.className = "bundle-was";
     was.textContent = bundle.was;
-    const price = document.createElement("strong");
-    price.className = "bundle-price";
-    price.textContent = bundle.price;
-    prices.append(was, price);
-    card.append(name, includes, prices);
-    grid.append(card);
+    prices.append(was);
   }
-  section.append(heading, grid);
+  const price = document.createElement("strong");
+  price.className = "bundle-price";
+  price.textContent = bundle.price;
+  prices.append(price);
+  card.append(name, includes, prices);
+  return card;
+}
+
+function createBundleGrid(bundles) {
+  const grid = document.createElement("div");
+  grid.className = "bundle-grid";
+  for (const bundle of bundles) grid.append(createBundleCard(bundle));
+  return grid;
+}
+
+function createBundleSection(bundles, { id, titleText, subtitleText, categorized = false }) {
+  const section = document.createElement("section");
+  section.id = id;
+  section.className = `bundle-section${categorized ? " bundle-section-grouped" : ""}`;
+  section.setAttribute("aria-labelledby", `${id}-title`);
+  const heading = document.createElement("div");
+  heading.className = "bundle-heading";
+  const title = document.createElement("h4");
+  title.id = `${id}-title`;
+  title.textContent = titleText;
+  const subtitle = document.createElement("p");
+  subtitle.textContent = subtitleText;
+  heading.append(title, subtitle);
+  section.append(heading);
+
+  if (categorized) {
+    const categories = [...new Set(bundles.map((bundle) => bundle.category))];
+    for (const category of categories) {
+      const categoryBlock = document.createElement("div");
+      categoryBlock.className = "bundle-category";
+      const categoryTitle = document.createElement("h5");
+      categoryTitle.className = "bundle-category-title";
+      categoryTitle.textContent = category;
+      const categoryBundles = bundles.filter((bundle) => bundle.category === category);
+      categoryBlock.append(categoryTitle, createBundleGrid(categoryBundles));
+      section.append(categoryBlock);
+    }
+  } else {
+    section.append(createBundleGrid(bundles));
+  }
   return section;
 }
 
@@ -277,6 +314,24 @@ function renderMenu(searchTerm = "") {
   let visibleCategories = 0;
   let visibleBundles = 0;
 
+  const matchedEverydayBundles = everydayBundles.filter((bundle) =>
+    `${bundle.title} ${bundle.category} ${bundle.items.join(" ")} ${bundle.price} regular bundles available every day`.toLocaleLowerCase().includes(query)
+  );
+  if (matchedEverydayBundles.length > 0) {
+    const everydayLink = document.createElement("a");
+    everydayLink.className = "group-chip";
+    everydayLink.href = "#everyday-bundles";
+    everydayLink.textContent = "Everyday Bundles";
+    categoryNav.append(everydayLink);
+    menuRoot.append(createBundleSection(matchedEverydayBundles, {
+      id: "everyday-bundles",
+      titleText: "Everyday Bundles",
+      subtitleText: "Regular menu · Available every day",
+      categorized: true
+    }));
+    visibleBundles += matchedEverydayBundles.length;
+  }
+
   for (const group of menuGroups) {
     const groupSections = menuSections.filter((section) => section.group === group.key);
     const matchedSections = groupSections.map((section) => ({
@@ -284,7 +339,7 @@ function renderMenu(searchTerm = "") {
       items: section.items.filter((item) => `${item.name} ${item.price} ${item.note ?? ""} ${section.title} ${group.title}`.toLocaleLowerCase().includes(query))
     })).filter(({ items }) => !query || items.length > 0);
     const matchedBundles = group.key === "food" ? ladiesNightBundles.filter((bundle) =>
-      `${bundle.title} ${bundle.items.join(" ")} ${bundle.price} ${bundle.was} ladies night food bundles`.toLocaleLowerCase().includes(query)
+      `${bundle.title} ${bundle.items.join(" ")} ${bundle.price} ${bundle.was} ladies night food bundles special tonight`.toLocaleLowerCase().includes(query)
     ) : [];
     if (matchedSections.length === 0 && matchedBundles.length === 0) continue;
     visibleCategories += matchedSections.length;
@@ -326,12 +381,20 @@ function renderMenu(searchTerm = "") {
     const groupCount = document.createElement("span");
     groupCount.className = "group-count";
     const countItems = matchedSections.reduce((sum, row) => sum + row.items.length, 0);
-    const countParts = [`${countItems} items`, `${matchedSections.length} sections`];
+    const countParts = [];
+    if (countItems > 0) countParts.push(`${countItems} items`);
+    if (matchedSections.length > 0) countParts.push(`${matchedSections.length} sections`);
     if (matchedBundles.length > 0) countParts.push(`${matchedBundles.length} bundles`);
     groupCount.textContent = countParts.join(" · ");
     heading.append(titleWrap, groupCount);
     groupElement.append(heading);
-    if (matchedBundles.length > 0) groupElement.append(createBundleSection(matchedBundles));
+    if (matchedBundles.length > 0) {
+      groupElement.append(createBundleSection(matchedBundles, {
+        id: "ladies-night-bundles",
+        titleText: "Ladies Night Food Bundles",
+        subtitleText: "Exclusive food bundles for tonight only"
+      }));
+    }
     const grid = document.createElement("div");
     grid.className = "menu-grid";
     for (const { section, items } of matchedSections) grid.append(createMenuCard(section, items));
@@ -356,7 +419,6 @@ function renderMenu(searchTerm = "") {
   }
   clearButton.hidden = !query;
 }
-
 searchInput.addEventListener("input", () => renderMenu(searchInput.value));
 clearButton.addEventListener("click", () => {
   searchInput.value = "";

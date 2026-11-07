@@ -18,7 +18,7 @@
 
 ## Ladies Night at PUBLIQ
 
-An evening of great food, signature drinks, café favorites, and wild vibes. Browse the full bar, food and café menus, then gather around one of the exclusive food bundles.
+An evening of great food, signature drinks, café favorites, and wild vibes. Browse the full bar, food and café menus, then gather around a bundle—there are everyday options as well as Ladies Night specials.
 
 **Saturday, November 7, 2026** · **Beats by GUEST** · Doors open at **9 PM**
 
@@ -28,7 +28,27 @@ An evening of great food, signature drinks, café favorites, and wild vibes. Bro
 
 **White Rum · Pineapple Juice · Sprite**
 
-### Ladies Night Food Bundles
+## Everyday Bundles · Available Every Day
+
+### Liquor &amp; Food Bundles
+
+- **The Jackpot** — Jack Daniel’s 700ml, Coke 1.5L, Crispy Pata, Pork Sisig, Nachos · **₱4,249**
+- **Blackout** — Johnnie Walker Black Label 700ml, Coke 1.5L, Half Fried Chicken, Dinakdakan, Breaded Cheese Sticks · **₱3,499**
+- **Tequila Takeover** — Jose Cuervo 700ml, Sliced Lemon, Tempura, Calamares, Gyoza · **₱2,699**
+
+### Cocktail Tower Bundles
+
+- **Double Trouble** — 2 Cocktail Towers (3L each), Pork Sisig, Chicken Skin · **₱1,649**
+- **After Hours** — 2 Cocktail Towers (3L each), Dinakdakan, Crispy Chicken Isaw · **₱1,699**
+- **Tower of Temptation** — 2 Cocktail Towers (3L each), Truffle Fries, Buffalo Wings · **₱1,799**
+
+### Beer Bucket Bundles
+
+- **Bucket List** — 2 Beer Buckets (6 bottles each), Pork Sisig, Chicken Skin · **₱1,499**
+- **Buzzed &amp; Bites** — 2 Beer Buckets (6 bottles each), Dinakdakan, Crispy Chicken Isaw · **₱1,599**
+- **The Last Round** — 2 Beer Buckets (6 bottles each), Truffle Fries, Buffalo Wings · **₱1,699**
+
+## Ladies Night Food Bundles · Tonight’s Specials
 
 - **Lip Service** — Mozzarella Sticks, Truffle Fries, Dynamite Rolls · **₱699** (was ₱859)
 - **Drama Queens** — Nachos Supreme, Buffalo Wings, Gyoza · **₱749** (was ₱895)
@@ -37,7 +57,7 @@ An evening of great food, signature drinks, café favorites, and wild vibes. Bro
 - **The Gossip Table** — Sisig, Gambas, Carbonara, Nachos · **₱949** (was ₱1,185)
 - **Queen’s Table** — Crispy Pata, Buttered Chicken, Pancit Mix, Tempura, Truffle Fries · **₱1,999** (was ₱2,500)
 
-### The Menus
+## The Menus
 
 **Bar:** Bottled Spirits · Cocktails · Cocktail Towers · Wines · Beers · Shots · Mocktails · Beer Buckets · Beverages &amp; Mixers
 
@@ -60,6 +80,6 @@ An evening of great food, signature drinks, café favorites, and wild vibes. Bro
 ---
 
 <p align="center">
-  <strong>18 menu sections · 114 menu items · 6 Ladies Night bundles</strong><br>
+  <strong>18 menu sections · 114 menu items · 9 everyday bundles · 6 Ladies Night specials</strong><br>
   <sub>One easy-to-browse PUBLIQ Super Club menu for mobile and desktop.</sub>
 </p>
