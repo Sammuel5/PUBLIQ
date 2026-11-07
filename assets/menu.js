@@ -437,4 +437,35 @@ document.addEventListener("keydown", (event) => {
 });
 const toTop = document.getElementById("toTop");
 window.addEventListener("scroll", () => toTop.classList.toggle("show", window.scrollY > 560), { passive: true });
+
+function scrollToHash(hash = window.location.hash) {
+  const id = decodeURIComponent(hash.replace(/^#/, ""));
+  if (!id) return;
+  const target = document.getElementById(id);
+  if (!target) return;
+  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
+}
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest?.('a[href^="#"]');
+  if (!link) return;
+  const hash = link.getAttribute("href");
+  const id = decodeURIComponent(hash.slice(1));
+  let target = document.getElementById(id);
+  if (!target && searchInput.value) {
+    searchInput.value = "";
+    renderMenu();
+    target = document.getElementById(id);
+  }
+  if (!target) return;
+  event.preventDefault();
+  const canonicalHash = `#${encodeURIComponent(id)}`;
+  if (window.location.hash !== canonicalHash) window.history.pushState({}, "", canonicalHash);
+  scrollToHash(canonicalHash);
+});
+
+window.addEventListener("hashchange", () => scrollToHash());
+window.addEventListener("popstate", () => scrollToHash());
 renderMenu();
+if (window.location.hash) requestAnimationFrame(() => requestAnimationFrame(() => scrollToHash()));
