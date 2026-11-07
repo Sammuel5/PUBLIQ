@@ -1,8 +1,8 @@
-# Publish the PUBLIQ Super Club menu on GitHub Pages
+# Publish the PUBLIQ Super Club Ladies Night menu on GitHub Pages
 
-This folder is a **static website**: `index.html`, a separate `assets/styles.css` stylesheet, a separate `assets/menu.js` script, and local image files. It needs no admin login, database, API, server, Vercel Function, environment variables, or build command.
+This is a **static website**: `index.html`, a separate `assets/styles.css` stylesheet, a separate `assets/menu.js` script, and local image files. It needs no admin login, database, API, server, Vercel Function, environment variables, or build command.
 
-The page combines the bar menu with the Food & Café list: **15 sections and 119 menu items**, plus the featured Red Flag cocktail, six REDnight bundle offers, and the event details supplied in the latest poster. The original typed menu names and prices remain in place; the new cocktail, bundle contents/prices/savings, and event copy come from the poster you approved. The notice says all prices include 12% VAT and no additional service charge applies to food or bar orders. The three juice-price asterisks are preserved; no footnote was supplied.
+The current site uses the latest supplied menu posters as the complete source for standard names and prices: **18 menu sections and 114 menu items**, plus six Ladies Night food bundles and the Tropical Kiss first-drink promotion. The menu includes the selected notice that all prices include 12% VAT and no additional service charge applies to food or bar orders. Event details are Saturday, November 7, 2026; Beats by GUEST; doors open at 9 PM.
 
 ## 1. Download and unzip the site
 
@@ -27,14 +27,14 @@ GITHUB-PAGES-TUTORIAL.md
 5. You can leave **Add a README file** unchecked because the site already includes one.
 6. Select **Create repository**.
 
-Use a new, clean repository for this static version. Do not upload the old server/admin project if you only want the static menu.
+Use a new, clean repository for this static version. Do not upload an old server/admin project if you only want the static menu.
 
 ## 3. Upload the page and pictures
 
 1. In the new repository, select **Add file** → **Upload files**.
 2. Upload `index.html`, `.nojekyll`, `README.md`, `GITHUB-PAGES-TUTORIAL.md`, and the complete `assets` folder with all eight files inside it (four photos, logo, icon, `styles.css`, and `menu.js`).
 3. Confirm the final file list shows `index.html` at the top level and `assets/` beside it.
-4. Enter a commit message such as `Add PUBLIQ static menu`, then select **Commit changes**.
+4. Enter a commit message such as `Add PUBLIQ Ladies Night menu`, then select **Commit changes**.
 
 If your browser's upload screen does not accept the `assets` folder, upload the files inside it while keeping their paths under `assets/`. You can also use GitHub Desktop: clone the repository, copy these files into the cloned repository folder, then commit and push.
 
@@ -58,39 +58,35 @@ https://YOUR-GITHUB-USERNAME.github.io/publiq-super-club-menu/
 
 Replace `YOUR-GITHUB-USERNAME` with your GitHub username and adjust the repository name if you chose a different one. Publishing can take a few minutes; GitHub says it may take up to 10 minutes.
 
-## 6. Change menu items or prices
+## 6. Change menu items, prices or bundles
 
 1. In the repository, open `assets/menu.js` and select the pencil/edit control.
-2. Search within the file for `const menuSections = [`.
-3. Each category is an object. For example:
+2. Search for `const menuSections = [` to edit standard menu names or prices. Each category has an `id`, a `group` (`bar` or `food`), a `title`, and an `items` list. For example:
 
    ```js
    { name: "Jim Beam", price: "₱3,299" },
    ```
 
-4. Edit the name or price, keeping the quotes, commas, and brackets.
+3. The six Ladies Night bundle cards are stored in `const ladiesNightBundles = [`; each bundle has its contents, crossed-out poster price (`was`), and current price.
+4. Tropical Kiss is in the Cocktails section as the Ladies Night first-drink offer.
 5. Select **Commit changes**. GitHub Pages republishes after the commit.
 
-Prices are stored as text so peso signs, commas, and the supplied asterisks display exactly. If you add a new category, copy one existing section object and give it a new `id`, a `group` of `bar` or `food`, a `title`, and an `items` list. Red Flag is listed in the Cocktails section. The REDnight bundle cards are stored in `const foodBundles = [` in the same file.
-
-To change the event date, DJ, or doors time, edit the `event-card` block in `index.html`.
+Prices are stored as text so peso signs, commas, and offer wording display as supplied. To change the event date, performer text, or doors time, edit the `event-card` block in `index.html`.
 
 ## 7. Replace the illustrative photos
 
-The current pictures are illustrative and do not show the exact listed brands or dishes. To use real PUBLIQ photography, replace the relevant files under `assets/` and keep the filenames, or update the matching `src="assets/..."` in `index.html`:
+The current pictures are illustrative and do not show the exact listed products or brands. To use real PUBLIQ photography, replace the relevant files under `assets/` and keep the filenames, or update the matching `src="assets/..."` in `index.html`:
 
 ```text
-rednight-hero.jpg
-rednight-food.jpg
-rednight-drink.jpg
-rednight-cafe.jpg
+ladies-night-hero.jpg
+ladies-night-food.jpg
+tropical-kiss.jpg
+ladies-night-cafe.jpg
 publiq-superclub-logo.jpg
 publiq-super-club-icon.svg
 ```
 
-`styles.css` and `menu.js` are also in `assets/`; keep those files when replacing photos.
-
-Upload the replacements and commit. Filenames are case-sensitive on GitHub Pages.
+`styles.css` and `menu.js` are also in `assets/`; keep those files when replacing photos. Filenames are case-sensitive on GitHub Pages.
 
 ## Troubleshooting
 
